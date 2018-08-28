@@ -67,7 +67,7 @@ class ViewController: UIViewController, VideoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "lsp chk 370000"
+//        self.title = "lsp chk 370000"
         
         // MobileNet 클래스는 `MobileNet.mlmodel`를 프로젝트에 넣고, 빌드시키면 자동으로 생성된 랩퍼 클래스
         // MobileNet에서 만든 model: MLModel 객체로 (Vision에서 사용할) VNCoreMLModel 객체를 생성
@@ -148,20 +148,20 @@ class ViewController: UIViewController, VideoCaptureDelegate {
                 // show key points description
                 self.showKeypointsDescription(with: n_kpoints)
                 
-                // self.turtleBGView.alpha = 0.6
-//                if let p1: CGPoint = filetered_kpoints[0]?.point,
-//                    let p2: CGPoint = filetered_kpoints[2]?.point,
-//                    let p3: CGPoint = filetered_kpoints[1]?.point {
-//                    let result: Double = Double.radianAngle(p1: p1, p2: p2, p3: p3)
-//                    mvFilterAngle.addAngle(newAngle: result)
-//                    let angle = mvFilterAngle.angle
-//                    self.angleLabel.text = "\(String(format: "%.1f", angle))"
-//                    if abs(angle) > 284 {
-//                        self.turtleBGView.backgroundColor = .red
-//                    } else {
-//                        self.turtleBGView.backgroundColor = .green
-//                    }
-//                }
+                self.turtleBGView.alpha = 0.6
+                if let p1: CGPoint = filetered_kpoints[0]?.point,
+                    let p2: CGPoint = filetered_kpoints[2]?.point,
+                    let p3: CGPoint = filetered_kpoints[1]?.point {
+                    let result: Double = Double.radianAngle(p1: p1, p2: p2, p3: p3)
+                    mvFilterAngle.addAngle(newAngle: result)
+                    let angle = mvFilterAngle.angle
+                    self.angleLabel.text = "\(String(format: "%.1f", angle))"
+                    if abs(angle) > 284 {
+                        self.turtleBGView.backgroundColor = .red
+                    } else {
+                        self.turtleBGView.backgroundColor = .green
+                    }
+                }
                 
                 // end of measure
                 self.👨‍🔧.🎬🤚()
