@@ -138,8 +138,8 @@ class ViewController: UIViewController, VideoCaptureDelegate {
             //
             self.mvFilter.addKeypoints(keypoints: n_kpoints)
             
-//            let filetered_kpoints = self.mvFilter.keypoints
-            let filetered_kpoints = n_kpoints
+            let filetered_kpoints = self.mvFilter.keypoints
+//            let filetered_kpoints = n_kpoints
             
             DispatchQueue.main.sync {
                 // draw line
